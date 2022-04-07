@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Tracker</title>
+    <!-- bootstrap -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+     <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Varela+Round&display=swap" rel="stylesheet">
+    <!-- jQuery UI -->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <header class="jumbotron text-center bg-info text-white">
+        <h1>Project Tracker</h1>
+        <h2>Current Time & Date:</h2>
+        <h2 id="present"></h2>
+    </header>
+    <section class="container">
+        <div class="row justify-content-around">
+            <aside class="col-12 col-xl-3">
+                <div class="card">
+                    <h2 class="card-header bg-primary text-white rounded">Instructions</h2>
+                    <div class="card-body">
+                        <p>Click the button below to open a form and provide information for the following:</p>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item">Project Name</li>
+                            <li class="list-group-item">Project Tyle</li>
+                            <li class="list-group-item">Due Date</li>
+                            <li class="list-group-item">Hourly Rate</li>
+                        </ul>
+                        <div class="text-center">
+                            <button class="bg-primary text-white rounded" id="add" data-target="#modalBox">Add Project</button>
+                        </div>    
+                    </div>
+                </div>
+            </aside>
+            <main class="col-12 col-xl-9"> 
+                <section class="container">
+                    <div class="row border font-weight-bold" id="headerRow">
+                        <p class="col-3 border-left">Project Name</p>
+                        <p class="col-2 border-left">Project Type</p>
+                        <p class="col-1 border-left">Hourly Rate ($)</p>
+                        <p class="col-1 border-left">Due Date</p>
+                        <p class="col-1 border-left">Days Until Due Date</p>
+                        <p class="col-3 border-left">Potential Total Earnings ($)</p>
+                        <p class="col-1 border-left" id="x">X</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </section>
+    <!-- make a bootstrap modal -->
+    <div class="modal" id="modalBox" tabindex="-1" role="dialog" >
+        <div>
+            <form class="modal-dialog" id="project-form">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </form>
+        </div>
+      </div>
+
+
+
+
+    <div id="dialog" class="container">
+        <form class="col-12">
+            <div class="font-weight-bold">
+                <p>Add a new project.</p>
+            </div>
+            <main>
+                <div class="ui-widget">
+                    <label class="col-12" for="projectName">Project Name</label>
+                    <input class="col-12"id="projectName" placeholder="Enter the project's name"></input>
+                </div>
+                <div>
+                    <label class="col-12" for="projecttype">Project Type</label>
+                    <textarea class="col-12" name="projecttype" id="projectType" placeholder="Pick one..."></textarea>
+                </div>
+                <div>
+                    <label class="col-12" for="hourlyrate">Hourly Rate</label>
+                    <textarea class="col-12" name="hourlyrate" id="hourlyRate" placeholder="$"></textarea>
+                </div>
+                <div>
+                    <label class="col-12" for="duedate">Due Date</label>
+                    <textarea class="col-12" name="duedate" id="dueDate" placeholder="When is the project due?"></textarea>
+                </div>
+            </main>    
+            <div class="card-footer text-right">
+                <button id="close">Close</button>
+                <button id="submit">Submit Project Info</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- moment -->
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./script.js"></script>    
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
